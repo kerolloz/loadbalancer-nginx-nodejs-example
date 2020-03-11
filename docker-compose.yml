@@ -1,0 +1,20 @@
+version: '3'
+
+services: 
+    nginx_lb:
+        build: .
+        ports: 
+            - 8080:8080
+
+    node1:
+        build: app
+        environment:
+            - APP_ID=1
+    node2:
+        build: app
+        environment:
+            - APP_ID=2
+    node3:
+        build: app
+        environment:
+            - APP_ID=3
